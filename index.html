@@ -1,0 +1,38 @@
+<!DOCTYPE html >
+<html lang="ru">
+    <head>
+ <meta charset="utf-8">
+        <title>Калькулятор AD</title>
+
+        <script >
+       /*
+        * Функция подсчета стоимости услуг на количество товара
+        */
+        function calc() {
+             //получаем ссылку на элемент input (Цена)
+            var cena = document.getElementById("cena");
+            //получаем ссылку на элемент input (Кол-во вариантов)
+            var count = document.getElementById("count");
+            //получаем ссылку на элемент span, в него будем писать стоимость дизайна
+            var result = document.getElementById("result"); 
+ 
+            var price = 0;
+            price += parseInt(cena.value);
+            price = parseInt(count.value) * price;
+
+            result.innerHTML = price;
+        }
+ 
+</script>
+    </head>
+    <body>
+        <b>Стоимость за единицу товара:</b><br/>
+        <input type="text" id="cena" value="1" onchange="calc()" />
+        <br/>
+         <b>Количество товара:</b><br/> 
+<input type="text" id="count" value="1" onchange="calc()" />
+ <br/>
+<button onclick="calc();">Рассчитать стоимость</button><div><span id="result">0</span> руб.</div>
+        
+    </body>
+</html>
